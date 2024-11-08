@@ -119,7 +119,8 @@ def main():
 
         except Exception as e:
             logging.exception(f'Failed to process {symbol_track_file_path}')
-            raise
+            # remove comment after fixing, this is to allow the script to continue even when one of the symbols fail.
+            # raise
 
 
 def get_issa_rest_api_response(request):
