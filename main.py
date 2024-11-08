@@ -96,7 +96,10 @@ def main():
                                 symbol_price_date = datetime.datetime.strptime(symbol_price_date, "%d/%m/%Y").strftime('%Y-%m-%d')
 
             if not symbol_price:
-                raise Exception(f'Failed to get price for {symbol}')
+                logging.info(f'Failed to get price for {symbol}')
+                continue
+                # remove the comment from the next line 
+                # raise Exception(f'Failed to get price for {symbol}')
 
             symbol_dist_dir = os.path.join(DIST_DIR, symbol_id)
             os.makedirs(symbol_dist_dir, exist_ok=True)
